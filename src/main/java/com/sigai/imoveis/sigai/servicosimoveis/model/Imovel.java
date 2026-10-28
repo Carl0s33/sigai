@@ -1,29 +1,27 @@
 package com.sigai.imoveis.sigai.servicosimoveis.model;
-
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "imoveis")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Imovel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
+
     private String endereco;
-    @Column(name = "valor_aluguel", nullable = false)
-    private double valorAluguel;
-    @Column(length = 500)
+    private Double valorAluguel;
     private String descricao;
+
+    @OneToMany(mappedBy = "imovel", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Builder.Default
+    private List<Foto> fotos = new ArrayList<>();
 }
-
-
-
-
