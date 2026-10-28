@@ -1,13 +1,12 @@
 package com.sigai.servicosimoveis.controller;
 
+import com.sigai.servicosimoveis.dto.FotoRequestDTO;
+import com.sigai.servicosimoveis.dto.FotoResponseDTO;
+import com.sigai.servicosimoveis.service.FotoService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import com.sigai.servicosimoveis.dto.FotoRequestDTO;
-import com.sigai.servicosimoveis.dto.FotoResponseDTO;
-import com.sigai.servicosimoveis.service.FotoService;
 
 import java.net.URI;
 import java.util.List;

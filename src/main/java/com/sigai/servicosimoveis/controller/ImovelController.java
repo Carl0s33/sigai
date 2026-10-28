@@ -1,13 +1,12 @@
 package com.sigai.servicosimoveis.controller;
 
+import com.sigai.servicosimoveis.dto.ImovelRequestDTO;
+import com.sigai.servicosimoveis.dto.ImovelResponseDTO;
+import com.sigai.servicosimoveis.service.ImovelService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import com.sigai.servicosimoveis.dto.ImovelRequestDTO;
-import com.sigai.servicosimoveis.dto.ImovelResponseDTO;
-import com.sigai.servicosimoveis.service.ImovelService;
 
 import java.net.URI;
 import java.util.List;
