@@ -1,19 +1,20 @@
 package com.sigai.imoveis.sigai;
 
-import com.sigai.imoveis.sigai.servicosimoveis.controller.FotoController;
-import com.sigai.imoveis.sigai.servicosimoveis.controller.ImovelController;
-import com.sigai.imoveis.sigai.servicosimoveis.dto.FotoRequestDTO;
-import com.sigai.imoveis.sigai.servicosimoveis.dto.FotoResponseDTO;
-import com.sigai.imoveis.sigai.servicosimoveis.dto.ImovelRequestDTO;
-import com.sigai.imoveis.sigai.servicosimoveis.dto.ImovelResponseDTO;
-import com.sigai.imoveis.sigai.servicosimoveis.exception.FotoNaoEncontradaException;
-import com.sigai.imoveis.sigai.servicosimoveis.exception.ImovelNaoEncontradoException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+
+import com.sigai.servicosimoveis.controller.FotoController;
+import com.sigai.servicosimoveis.controller.ImovelController;
+import com.sigai.servicosimoveis.dto.FotoRequestDTO;
+import com.sigai.servicosimoveis.dto.FotoResponseDTO;
+import com.sigai.servicosimoveis.dto.ImovelRequestDTO;
+import com.sigai.servicosimoveis.dto.ImovelResponseDTO;
+import com.sigai.servicosimoveis.exception.FotoNaoEncontradaException;
+import com.sigai.servicosimoveis.exception.ImovelNaoEncontradoException;
 
 import java.util.List;
 
