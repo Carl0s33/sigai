@@ -1,6 +1,5 @@
 package com.sigai.imoveis.sigai.servicosimoveis.dto;
 
-import com.sigai.imoveis.sigai.servicosimoveis.model.Imovel;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
@@ -14,6 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ImovelRequestDTO {
+
     @NotBlank(message = "O endereço é obrigatório")
     private String endereco;
 
@@ -22,8 +22,4 @@ public class ImovelRequestDTO {
 
     @Size(max = 500, message = "A descrição deve ter no máximo 500 caracteres")
     private String descricao;
-
-    public Imovel toModel() {
-        return new Imovel(null, this.endereco, this.valorAluguel, this.descricao);
-    }
 }

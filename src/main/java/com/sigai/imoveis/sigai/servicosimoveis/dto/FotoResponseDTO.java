@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.jspecify.annotations.NonNull;
 
 @Data
 @Builder
@@ -19,20 +18,10 @@ public class FotoResponseDTO {
     private String legenda;
     private Boolean principal;
 
-    public FotoResponseDTO(@NonNull Foto foto) {
-        this(
-                foto.getId(),
-                foto.getImovelId(),
-                foto.getUrl(),
-                foto.getLegenda(),
-                foto.getPrincipal()
-        );
-    }
-
     public static FotoResponseDTO fromModel(Foto foto) {
         return FotoResponseDTO.builder()
                 .id(foto.getId())
-                .imovelId(foto.getImovelId())
+                .imovelId(foto.getImovel() != null ? foto.getImovel().getId() : null)
                 .url(foto.getUrl())
                 .legenda(foto.getLegenda())
                 .principal(foto.getPrincipal())

@@ -1,6 +1,5 @@
 package com.sigai.imoveis.sigai.servicosimoveis.dto;
 
-import com.sigai.imoveis.sigai.servicosimoveis.model.Foto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -15,18 +14,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class FotoRequestDTO {
 
-    @NotNull(message = "O imovelId é obrigatório")
+    @NotNull(message = "O ID do imóvel não pode ser nulo")
     private Long imovelId;
 
-    @NotBlank(message = "A url é obrigatória")
+    @NotBlank(message = "A URL é obrigatória")
     private String url;
 
     @Size(max = 200, message = "A legenda deve ter no máximo 200 caracteres")
     private String legenda;
 
     private Boolean principal;
-
-    public Foto toModel() {
-        return new Foto(null, this.imovelId, this.url, this.legenda, this.principal);
-    }
 }

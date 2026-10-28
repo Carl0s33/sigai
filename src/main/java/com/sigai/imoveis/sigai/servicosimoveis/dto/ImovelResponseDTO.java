@@ -1,6 +1,6 @@
 package com.sigai.imoveis.sigai.servicosimoveis.dto;
-
 import com.sigai.imoveis.sigai.servicosimoveis.model.Imovel;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,19 +11,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ImovelResponseDTO {
+
     private Long id;
     private String endereco;
     private double valorAluguel;
     private String descricao;
-
-    public ImovelResponseDTO(Imovel imovel) {
-        this(
-                imovel.getId(),
-                imovel.getEndereco(),
-                imovel.getValorAluguel(),
-                imovel.getDescricao()
-        );
-    }
 
     public static ImovelResponseDTO fromModel(Imovel imovel) {
         return ImovelResponseDTO.builder()
