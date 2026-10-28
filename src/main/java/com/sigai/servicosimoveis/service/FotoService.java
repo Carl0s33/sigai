@@ -1,13 +1,13 @@
 package com.sigai.servicosimoveis.service;
 
-import ifrn.sigai.servicoimoveis.dto.FotoRequestDTO;
-import ifrn.sigai.servicoimoveis.dto.FotoResponseDTO;
-import ifrn.sigai.servicoimoveis.exception.FotoNaoEncontradaException;
-import ifrn.sigai.servicoimoveis.exception.ImovelNaoEncontradoException;
-import ifrn.sigai.servicoimoveis.model.Foto;
-import ifrn.sigai.servicoimoveis.model.Imovel;
-import ifrn.sigai.servicoimoveis.repository.FotoRepository;
-import ifrn.sigai.servicoimoveis.repository.ImovelRepository;
+import com.sigai.servicosimoveis.dto.FotoRequestDTO;
+import com.sigai.servicosimoveis.dto.FotoResponseDTO;
+import com.sigai.servicosimoveis.exception.FotoNaoEncontradaException;
+import com.sigai.servicosimoveis.exception.ImovelNaoEncontradoException;
+import com.sigai.servicosimoveis.model.Foto;
+import com.sigai.servicosimoveis.model.Imovel;
+import com.sigai.servicosimoveis.repository.FotoRepository;
+import com.sigai.servicosimoveis.repository.ImovelRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
