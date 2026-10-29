@@ -7,9 +7,9 @@ import com.sigai.servicosimoveis.model.Imovel;
 
 import java.util.List;
 
-@Repository
 public interface ImovelRepository extends JpaRepository<Imovel, Long> {
-    List<Imovel> findByValorAluguelLessThan(double valorAluguel);
-    List<Imovel> findByEnderecoIgnoreCase(String endereco);
-    List<Imovel> findByDescricaoIgnoreCase(String descricao);
+    List<Imovel> findByEnderecoContainingIgnoreCase(String endereco);
+    List<Imovel> findByValorAluguelLessThanEqual(Double valorMaximo);
+    List<Imovel> findByEnderecoContainingIgnoreCaseAndValorAluguelLessThanEqual(String endereco, Double valorMaximo);
+
 }

@@ -3,23 +3,28 @@ package com.sigai.servicosimoveis.dto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@Data 
 public class ImovelRequestDTO {
 
-    @NotBlank(message = "O endereço é obrigatório")
+    public ImovelRequestDTO() {
+    }   
+
+    public ImovelRequestDTO(String endereco, Double valorAluguel, String descricao) {
+        this.endereco = endereco;
+        this.valorAluguel = valorAluguel;
+        this.descricao = descricao;
+    }
+    
+    @NotBlank(message = "O endereço não pode ser nulo ou vazio.")
     private String endereco;
-
-    @Positive(message = "O valor do aluguel deve ser maior que zero")
-    private double valorAluguel;
-
-    @Size(max = 500, message = "A descrição deve ter no máximo 500 caracteres")
+    
+    @NonNull
+    @Positive
+    private Double valorAluguel;
+    
+    @Size(max = 500)
     private String descricao;
 }

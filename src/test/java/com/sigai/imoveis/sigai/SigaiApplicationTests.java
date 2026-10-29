@@ -36,7 +36,7 @@ class SigaiApplicationTests {
     @Test
     void testCriarViaHttpValidaCampos() throws Exception {
         var mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
-        int quantidadeAntes = controller.listar().size();
+        int quantidadeAntes = controller.listar(null, null).size();
         for (String json : List.of(
                 """
                 {"endereco":"   ","valorAluguel":1500}
@@ -52,7 +52,7 @@ class SigaiApplicationTests {
                             .content(json))
                     .andExpect(status().isBadRequest());
         }
-        assertEquals(quantidadeAntes, controller.listar().size());
+        assertEquals(quantidadeAntes, controller.listar(null, null).size());
 
         mockMvc.perform(post("/imoveis")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -78,7 +78,7 @@ class SigaiApplicationTests {
         assertNotNull(buscado);
         assertEquals("Rua Teste, 123", buscado.getEndereco());
 
-        List<ImovelResponseDTO> lista = controller.listar();
+        List<ImovelResponseDTO> lista = controller.listar(null, null);
         assertFalse(lista.isEmpty());
     }
 
