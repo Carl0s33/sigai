@@ -1,18 +1,18 @@
 package com.sigai.servicosimoveis.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class LoginRequestDTO {
+    @NotBlank
+    private String username;
+    @NotBlank
+    private String password;
 
-    @NotBlank(message = "O login é obrigatório")
-    private String login;
+    public LoginRequestDTO(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
-    @NotBlank(message = "A senha é obrigatória")
-    private String senha;
+    public String getUsername() { return username; }
+    public String getPassword() { return password; }
 }
